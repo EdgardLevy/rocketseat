@@ -1,17 +1,5 @@
-//object short syntax
-const nome = "Edgard";
-const idade = 36;
+//webpack, servico que disponibiliza uma forma de trabalhar com varios arquivos
+//js na aplicacao, imagem, etc, atraves do javascript
+import { soma } from "./funcoes";
 
-// const usuario = {
-//   nome: nome,
-//   idade: idade,
-//   empresa: "Interlaken"
-// };
-//quando a variavel eh igual a propriedade do objecto entao podemos abreviar
-const usuario = {
-  nome,
-  idade,
-  empresa: "Interlaken"
-};
-
-console.log(usuario);
+console.log(soma(1, 2));
