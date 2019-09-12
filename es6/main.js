@@ -1,32 +1,14 @@
-//desestruturacao
+//REST
+//server para pegar o resto das propriedades
+//ex
 const usuario = {
   nome: "Edgard",
-  idade: 32,
-  endereco: {
-    cidade: "rio preto",
-    estado: "mg"
-  }
+  idade: 36,
+  empresa: "Interlaken"
 };
 
-console.log(usuario);
-
-const {
-  nome,
-  idade,
-  endereco: { cidade }
-} = usuario;
+const { nome, ...resto } = usuario;
 
 console.log(nome);
-console.log(idade);
-console.log(cidade);
-
-function mostraNome(usuario) {
-  console.log(usuario.nome);
-}
-mostraNome(usuario);
-
-function mostraNome2({ nome, idade }) {
-  console.log(nome, idade);
-}
-
-mostraNome2(usuario);
+//rest operator fica com o valor restante da desestruturacao
+console.log(resto);
