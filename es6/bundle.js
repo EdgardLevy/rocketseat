@@ -1,13 +1,24 @@
 "use strict";
 
 //Rest
-//aplicado a vetores
-var arr = [1, 2, 3, 4];
-var a = arr[0],
-    b = arr[1],
-    c = arr.slice(2);
-console.log(a); //=1
+//para adcionar um novo parametro dessa forma, sempre tem que alterar a funcao
+function soma(a, b, c) {
+  return a + b + c;
+}
 
-console.log(b); //=2
+console.log(soma(1, 3, 1)); //usando o operador rest fica mais facil
 
-console.log(c); //=3,4
+function somaRest() {
+  for (var _len = arguments.length, params = new Array(_len), _key = 0; _key < _len; _key++) {
+    params[_key] = arguments[_key];
+  }
+
+  //dentro do parametro pode ser usar o resto
+  console.log(params); //utilizando reduce para fazer a soma, ex
+
+  return params.reduce(function (total, next) {
+    return total + next;
+  });
+}
+
+console.log(somaRest(2, 2, 2, 2, 2, 2));
