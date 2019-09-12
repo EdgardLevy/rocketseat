@@ -1,7 +1,2 @@
-class Matematica {
-  static soma(a, b) {
-    return a + b;
-  }
-}
-
-console.log(Matematica.soma(1, 2));
+const a = 1; //nao pode ter valor reatribuido
+a = 3;
