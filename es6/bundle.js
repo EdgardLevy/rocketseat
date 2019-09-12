@@ -1,22 +1,18 @@
 "use strict";
 
-var arr = [1, 3, 4, 5, 8, 9]; //map percorre o vetor e retorna alguma info em outro vetor
-// const newArr = arr.map(function(item, index) {
-//   return item * 2;
-// });
-//arrow functions
-// const newArr = arr.map((item, index) => {
-//   return item * 2;
-// });
-//reducao de codigo
+//definicao de valores padroes
+function soma() {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
+  return a + b;
+}
 
-var newArr = arr.map(function (item, index) {
-  return item * 2;
-});
-console.log(newArr);
-
-var teste = function teste() {
-  return "teste";
+var somaArrow = function somaArrow() {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
+  return a + b;
 };
 
-console.log(teste());
+console.log(soma(1));
+console.log(soma());
+console.log(somaArrow(2, 2));

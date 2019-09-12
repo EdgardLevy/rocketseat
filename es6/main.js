@@ -1,21 +1,11 @@
-const arr = [1, 3, 4, 5, 8, 9];
+//definicao de valores padroes
+function soma(a = 3, b = 6) {
+  return a + b;
+}
 
-//map percorre o vetor e retorna alguma info em outro vetor
-// const newArr = arr.map(function(item, index) {
-//   return item * 2;
-// });
-//arrow functions
-// const newArr = arr.map((item, index) => {
-//   return item * 2;
-// });
+const somaArrow = (a = 3, b = 6) => a + b;
 
-//reducao de codigo
-const newArr = arr.map((item, index) => item * 2);
+console.log(soma(1));
+console.log(soma());
 
-console.log(newArr);
-
-const teste = () => {
-  return "teste";
-};
-
-console.log(teste());
+console.log(somaArrow(2, 2));
