@@ -1,18 +1,32 @@
 "use strict";
 
-//definicao de valores padroes
-function soma() {
-  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
-  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
-  return a + b;
+//desestruturacao
+var usuario = {
+  nome: "Edgard",
+  idade: 32,
+  endereco: {
+    cidade: "rio preto",
+    estado: "mg"
+  }
+};
+console.log(usuario);
+var nome = usuario.nome,
+    idade = usuario.idade,
+    cidade = usuario.endereco.cidade;
+console.log(nome);
+console.log(idade);
+console.log(cidade);
+
+function mostraNome(usuario) {
+  console.log(usuario.nome);
 }
 
-var somaArrow = function somaArrow() {
-  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
-  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
-  return a + b;
-};
+mostraNome(usuario);
 
-console.log(soma(1));
-console.log(soma());
-console.log(somaArrow(2, 2));
+function mostraNome2(_ref) {
+  var nome = _ref.nome,
+      idade = _ref.idade;
+  console.log(nome, idade);
+}
+
+mostraNome2(usuario);

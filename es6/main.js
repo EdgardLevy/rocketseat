@@ -1,11 +1,32 @@
-//definicao de valores padroes
-function soma(a = 3, b = 6) {
-  return a + b;
+//desestruturacao
+const usuario = {
+  nome: "Edgard",
+  idade: 32,
+  endereco: {
+    cidade: "rio preto",
+    estado: "mg"
+  }
+};
+
+console.log(usuario);
+
+const {
+  nome,
+  idade,
+  endereco: { cidade }
+} = usuario;
+
+console.log(nome);
+console.log(idade);
+console.log(cidade);
+
+function mostraNome(usuario) {
+  console.log(usuario.nome);
+}
+mostraNome(usuario);
+
+function mostraNome2({ nome, idade }) {
+  console.log(nome, idade);
 }
 
-const somaArrow = (a = 3, b = 6) => a + b;
-
-console.log(soma(1));
-console.log(soma());
-
-console.log(somaArrow(2, 2));
+mostraNome2(usuario);
