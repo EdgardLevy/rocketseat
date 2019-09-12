@@ -1,21 +1,13 @@
 "use strict";
 
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+//Rest
+//aplicado a vetores
+var arr = [1, 2, 3, 4];
+var a = arr[0],
+    b = arr[1],
+    c = arr.slice(2);
+console.log(a); //=1
 
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+console.log(b); //=2
 
-//REST
-//server para pegar o resto das propriedades
-//ex
-var usuario = {
-  nome: "Edgard",
-  idade: 36,
-  empresa: "Interlaken"
-};
-
-var nome = usuario.nome,
-    resto = _objectWithoutProperties(usuario, ["nome"]);
-
-console.log(nome); //rest operator fica com o valor restante da desestruturacao
-
-console.log(resto);
+console.log(c); //=3,4
