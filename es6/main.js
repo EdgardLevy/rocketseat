@@ -1,16 +1,20 @@
-//Rest
-//para adcionar um novo parametro dessa forma, sempre tem que alterar a funcao
-function soma(a, b, c) {
-  return a + b + c;
-}
+//Spread
+//diferente do rest, faz o papel de repassar as infos de um obj ou array para outra estrutura de dados
 
-console.log(soma(1, 3, 1));
-//usando o operador rest fica mais facil
-function somaRest(...params) {
-  //dentro do parametro pode ser usar o resto
-  console.log(params);
-  //utilizando reduce para fazer a soma, ex
-  return params.reduce((total, next) => total + next);
-}
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+//copia as propriedades dos arrays para o resultado
+const arr3 = [...arr1, ...arr2];
 
-console.log(somaRest(2, 2, 2, 2, 2, 2));
+console.log(arr1);
+console.log(arr2);
+console.log(arr3);
+
+//usando o spred para objetos
+const usuario1 = { nome: "Edgard", idade: 32, empresa: "Interlaken" };
+//copia as propriedades do usuario1, mas altera o nome
+const usuario2 = { ...usuario1, nome: "Outro" };
+
+//mto utilizado no react
+
+console.log(usuario2);
