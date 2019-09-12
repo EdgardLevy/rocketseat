@@ -1,10 +1,12 @@
 module.exports = {
-  entry: "./main.js",
+  entry: "./src/main.js",
   output: {
-    path: __dirname,
+    path: __dirname + "/public",
     filename: "bundle.js"
   },
-
+  devServer: {
+    contentBase: __dirname + "/public"
+  },
   module: {
     /*define como o webpack deve se comportar quando o usuario adicionar novos js*/
     rules: [
