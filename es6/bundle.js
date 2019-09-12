@@ -1,8 +1,17 @@
 "use strict";
 
-//template literals
+//object short syntax
 var nome = "Edgard";
-var idade = 36;
-console.log("Meu nome \xE9 ".concat(nome, " e tenho ").concat(idade, " anos")); //com concatenacao seria
+var idade = 36; // const usuario = {
+//   nome: nome,
+//   idade: idade,
+//   empresa: "Interlaken"
+// };
+//quando a variavel eh igual a propriedade do objecto entao podemos abreviar
 
-console.log("Meu nome é " + nome + " e tenho " + idade + " anos");
+var usuario = {
+  nome: nome,
+  idade: idade,
+  empresa: "Interlaken"
+};
+console.log(usuario);
