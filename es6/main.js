@@ -1,32 +1,21 @@
 const arr = [1, 3, 4, 5, 8, 9];
 
 //map percorre o vetor e retorna alguma info em outro vetor
-const newArr = arr.map(function(item, index) {
-  return item + index;
-});
+// const newArr = arr.map(function(item, index) {
+//   return item * 2;
+// });
+//arrow functions
+// const newArr = arr.map((item, index) => {
+//   return item * 2;
+// });
+
+//reducao de codigo
+const newArr = arr.map((item, index) => item * 2);
 
 console.log(newArr);
 
-//reduce percorre o vetor para 'reduzir' em uma unica informacao
+const teste = () => {
+  return "teste";
+};
 
-const sum = arr.reduce(function(total, next) {
-  return total + next;
-});
-
-console.log(sum);
-
-const filter = arr.filter(function(item) {
-  //verifica se o numero eh par
-  //utilizando o operador de modulo que retorna o diferencial da divisao
-  return item % 2 === 0;
-});
-
-console.log(filter);
-
-//find busca alguma coisa no vetor
-
-const find = arr.find(function(item) {
-  return item === 4;
-});
-
-console.log(find);
+console.log(teste());
