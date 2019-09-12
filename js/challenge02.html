@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="user">
+    <button onclick="btnClick()">Adicionar</button>
+
+    <ul id="repos">
+
+    </ul>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        var inputElement = document.querySelector("input[name=user]");
+        var btnElement = document.querySelector("button");
+        var reposElement = document.getElementById("repos");
+
+
+        function clearRepos() {
+            reposElement.innerHTML = "";
+        }
+        //utilizando requisicao ajax padrao
+        function ajaxRequest() {
+            clearRepos();
+            var item = document.createElement("li");
+            item.innerText = "Carregando...";
+            reposElement.appendChild(item)
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', `https://api.github.com/users/${inputElement.value}/repos`);
+            xhr.send(null);
+            xhr.onreadystatechange = function () {
+                //indica que o retorno chegou
+                if (xhr.readyState === 4) {
+                    clearRepos();
+                    var jResponse = JSON.parse(xhr.responseText)
+                    console.log(jResponse);
+                    for (const iterator of jResponse) {
+                        //console.log(iterator.name);
+                        var item = document.createElement("li");
+                        item.innerText = iterator.name;
+                        reposElement.appendChild(item)
+                    }
+
+                }
+            }
+        }
+        //utilizando axios para o request
+        function axiosRequest() {
+            clearRepos();
+            var item = document.createElement("li");
+            item.innerText = "Carregando...";
+            reposElement.appendChild(item)
+            axios.get(`https://api.github.com/users/${inputElement.value}/repos`)
+                .then(response => {
+                    console.log(response);
+                    for (const iterator of response.data) {
+                        //console.log(iterator.name);
+                        var item = document.createElement("li");
+                        item.innerText = iterator.name;
+                        reposElement.appendChild(item)
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                })
+
+        }
+        //console.log(btnElement);
+        btnElement.onclick = function () {
+            //alert(inputElement.value)
+            //defaultRequest();
+            //ajaxRequest();
+            axiosRequest();
+        }
+
+
+    </script>
+</body>
+
+</html>
