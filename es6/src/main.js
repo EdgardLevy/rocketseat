@@ -40,17 +40,13 @@ class App {
       for (let index = 0; index < repos.length; index++) {
         const repo = repos[index];
 
-        let url = `/repos/${repo.full_name}`;
-        console.log(url);
         try {
-          const response = await api.get(url);
-
           const {
             name,
             description,
             html_url,
             owner: { avatar_url }
-          } = response.data;
+          } = repo;
 
           this.repositories.push({
             name,
