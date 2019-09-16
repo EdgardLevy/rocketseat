@@ -8,7 +8,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb://localhost:27017/nodeapi", {
+const HOST = process.env.HOST;
+
+mongoose.connect(`mongodb://${HOST}:27017/nodeapi`, {
   useNewUrlParser: true
 });
 

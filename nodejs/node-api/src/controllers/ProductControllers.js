@@ -27,5 +27,17 @@ module.exports = {
   async destroy(req, res) {
     await Product.findByIdAndRemove(req.params.id);
     return res.send();
+  },
+  async seed(req, res) {
+    for (let index = 0; index < 20; index++) {
+      await Product.create({
+        title: `product ${index}`,
+        description: `description ${index}`,
+        url: `http://product${index}`
+      });
+
+    }
+    const products = await Product.find();
+    return res.json(products);
   }
 };

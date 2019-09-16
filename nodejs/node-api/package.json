@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "set HOST=localhost && nodemon server.js",
+    "dev_win": "set HOST=192.168.99.102 && nodemon server.js"
   },
   "keywords": [],
   "author": "",
